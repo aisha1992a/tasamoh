@@ -778,7 +778,7 @@
    الموقع منشور على GitHub، ويحفظ العبارات والنتائج في جدول المعلمة عبر رابط Apps Script.
    ضعي هنا رابط تطبيق الويب من Apps Script (ينتهي بـ /exec) — راجعي دليل التشغيل.
    إذا بقي فارغًا يعمل الموقع في «وضع التجربة» ويحفظ على الجهاز فقط. */
-const SCRIPT_URL = '';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWTUHdWV0CNiA4KmIgS7LdXcJPaWyA4BoNmtbnqvzmsgJsYCalHcVjBMhN5e4ZV_Im/exec';
 const IN_GAS = typeof google !== 'undefined' && google.script && google.script.run;
 const ONLINE = !!(IN_GAS || SCRIPT_URL);
 function api(fn, ...args){
