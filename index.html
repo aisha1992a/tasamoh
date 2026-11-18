@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بالتسامح نرتقي وبالصداقة نسمو</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* لوحة ألوان احترافية مستوحاة من هوية وزارة التعليم */
+    --pri:#0f6b63; --pri-d:#0a4b46; --pri-l:#e8f3f1; --pri-m:#14897e;
+    --gold:#b8893a; --gold-d:#94692a; --gold-l:#f7f0e2; --gold-s:#e6c58a;
+    --ink:#1b2a33; --muted:#5e6d75; --line:#e3e9e7; --bg:#f6f7f4; --card:#ffffff;
+    --ok:#1f7a5a; --ok-l:#e5f4ec; --bad:#b4413f; --bad-l:#fbeceb;
+    --shadow:0 1px 2px rgba(16,42,48,.04),0 10px 28px rgba(16,42,48,.07);
+    --shadow-h:0 2px 4px rgba(16,42,48,.05),0 18px 40px rgba(16,42,48,.12);
+    --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.08' stroke-width='1.2'%3E%3Crect x='24' y='24' width='36' height='36'/%3E%3Crect x='24' y='24' width='36' height='36' transform='rotate(45 42 42)'/%3E%3Ccircle cx='42' cy='42' r='8'/%3E%3C/g%3E%3C/svg%3E");
+    /* أسماء قديمة مستخدمة داخل الصفحة */
+    --rose:var(--pri); --rose-d:var(--pri-d); --mint:var(--ok); --mint-d:var(--ok); --sun:var(--gold);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Tajawal',Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold-s);color:var(--ink)}
+  .wrap{max-width:1120px;margin:auto;padding:0 22px}
+
+  /* ---------- top band ---------- */
+  .topband{background:#fff;border-bottom:1px solid var(--line);position:relative}
+  .topband::after{content:"";position:absolute;inset:auto 0 -1px 0;height:3px;background:linear-gradient(90deg,var(--gold),var(--pri) 40%,var(--pri) 60%,var(--gold))}
+  .topband .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;flex-wrap:wrap}
+  .ministry{display:flex;align-items:center;gap:12px}
+  .ministry img{height:74px;width:auto;display:block}
+  /* شريط المدرسة والإعداد: نص متجاور في سطر واحد بلا مربعات */
+  .staff{flex:1;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4px 0;
+    background:linear-gradient(90deg,var(--pri-d),var(--pri) 50%,var(--pri-d));color:#e3f1ee;
+    padding:10px 16px;border-radius:14px;font-size:.95rem;line-height:1.6;box-shadow:0 6px 18px rgba(15,107,99,.2)}
+  .topband .wrap{flex-wrap:nowrap}
+  .staff span{padding:0 18px;white-space:nowrap}
+  .staff span + span{border-inline-start:1px solid rgba(255,255,255,.35)}
+  .staff b{color:#fff;font-weight:700}
+  .staff .school b{color:var(--gold-s)}
+  @media (max-width:980px){ .staff span{flex-basis:100%;text-align:center;border:0 !important} }
+  @media (max-width:640px){
+    .topband .wrap{gap:10px;padding:10px 12px}
+    .staff{font-size:.74rem;padding:6px 6px;line-height:1.55}
+    .staff span{padding:0 9px}
+    .staff span{flex-basis:100%;text-align:center;border:0 !important}
+  }
+
+  /* ---------- hero ---------- */
+  /* الصفحة الأولى بألوان زاهية مشرقة */
+  header.hero{position:relative;overflow:hidden;padding:84px 0 40px;text-align:center;color:var(--ink);
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%2314a394' stroke-opacity='.10' stroke-width='1.2'%3E%3Crect x='24' y='24' width='36' height='36'/%3E%3Crect x='24' y='24' width='36' height='36' transform='rotate(45 42 42)'/%3E%3Ccircle cx='42' cy='42' r='8'/%3E%3C/g%3E%3C/svg%3E"),
+      radial-gradient(circle at 12% 18%,rgba(255,138,170,.35) 0,transparent 38%),
+      radial-gradient(circle at 88% 22%,rgba(64,214,196,.38) 0,transparent 40%),
+      radial-gradient(circle at 50% 105%,rgba(255,200,87,.45) 0,transparent 50%),
+      linear-gradient(160deg,#e9fbf8,#fffaf0 50%,#fff0f5);
+    border-radius:0 0 40px 40px}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:10px;color:#d17a0f;font-weight:800;font-size:.95rem;letter-spacing:.3px;margin-bottom:14px;
+    background:#fff;padding:4px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(209,122,15,.15)}
+  .hero .eyebrow::before,.hero .eyebrow::after{content:"";color:#ff7a9c;font-size:.8rem}
+  .hero h1{font-size:clamp(2.1rem,5.6vw,3.8rem);font-weight:800;line-height:1.35}
+  .hero h1 .a{background:linear-gradient(90deg,#0fa596,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero h1 .b{background:linear-gradient(90deg,#ff6f91,#ff9a3c);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{max-width:620px;margin:18px auto 30px;color:#4a5a63;font-size:1.12rem}
+  .hero .btn-rose{background:linear-gradient(135deg,#14b8a6,#0f9488);color:#fff;box-shadow:0 8px 22px rgba(20,184,166,.35)}
+  .hero .btn-rose:hover{background:linear-gradient(135deg,#0f9488,#0b7a70)}
+  .hero .btn-ghost{background:#fff;color:#e2557a;border-color:#ffc2d1}
+  .hero .btn-ghost:hover{background:#fff0f5;border-color:#ff6f91;color:#d63d66}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:6px;border:2px solid transparent;cursor:pointer;font-family:inherit;font-weight:700;font-size:1rem;padding:11px 26px;border-radius:12px;transition:.2s;margin:3px}
+  .btn-rose{background:var(--pri);color:#fff;box-shadow:0 6px 16px rgba(15,107,99,.25)}
+  .btn-rose:hover{background:var(--pri-d);transform:translateY(-2px)}
+  .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--pri);color:var(--pri)}
+  .btn-mint{background:var(--gold);color:#fff;box-shadow:0 6px 16px rgba(184,137,58,.25)}
+  .btn-mint:hover{background:var(--gold-d)}
+  .btn:disabled{opacity:.6;cursor:wait}
+
+  /* ---------- sections ---------- */
+  section{padding:76px 0}
+  .title{text-align:center;margin-bottom:44px}
+  .title .tag{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.3px;margin-bottom:6px}
+  .title .tag::before,.title .tag::after{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
+  .title h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:800;color:var(--ink)}
+  .title h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;margin:12px auto 0;background:linear-gradient(90deg,var(--gold),var(--pri))}
+  .title p{color:var(--muted);max-width:640px;margin:12px auto 0}
+
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}
+  .card{background:var(--card);border-radius:18px;padding:26px;box-shadow:var(--shadow);border:1px solid var(--line);transition:.25s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;right:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--pri));opacity:0;transition:.25s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+  .card:hover::before{opacity:1}
+  .card .ic{width:58px;height:58px;display:grid;place-items:center;border-radius:16px;background:var(--pri-l);font-size:1.7rem;margin-bottom:14px}
+  .card h3{font-size:1.18rem;margin-bottom:6px;color:var(--ink)}
+  .card p{color:var(--muted)}
+
+  /* flip cards */
+  .flip{perspective:1000px;height:190px;cursor:pointer}
+  .flip-in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+  .flip.on .flip-in{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;box-shadow:var(--shadow)}
+  .front{background:#fff;border:1px solid var(--line)}
+  .front b{font-size:1.25rem;color:var(--pri-d)} .front small{color:var(--gold);font-weight:700;margin-top:6px}
+  .back{background:var(--pattern),linear-gradient(150deg,var(--pri-m),var(--pri-d));color:#fff;transform:rotateY(180deg);font-size:1.05rem}
+
+  /* ---------- verses ---------- */
+  .verses{background:var(--pattern),linear-gradient(160deg,#0b524c,#083a37);color:#fff}
+  .verses .title h2{color:#fff}
+  .verses .title .tag{color:var(--gold-s)}
+  .verses .title p{color:rgba(255,255,255,.75)}
+  .slider{max-width:820px;margin:auto;text-align:center;min-height:180px}
+  .v-stage{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:22px 18px}
+  .v-body{flex:1;min-height:170px;display:flex;flex-direction:column;justify-content:center}
+  .v-body.in{animation:vIn .45s ease}
+  @keyframes vIn{from{opacity:0;transform:translateY(10px)}}
+  .verse{font-family:'Amiri',serif;font-size:clamp(1.45rem,3.5vw,2.1rem);line-height:2.05}
+  .src{color:var(--gold-s);margin-top:10px;font-size:.95rem}
+  .v-kind{display:inline-block;align-self:center;background:rgba(230,197,138,.15);color:var(--gold-s);border:1px solid rgba(230,197,138,.35);padding:2px 14px;border-radius:999px;font-size:.82rem;font-weight:700;margin-bottom:10px}
+  .v-arrow{flex:none;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.06);
+    color:#fff;font-size:1.5rem;font-weight:800;cursor:pointer;transition:.2s;font-family:inherit}
+  .v-arrow:hover{background:var(--gold-s);border-color:var(--gold-s);color:var(--pri-d)}
+  .v-count{margin-top:16px;font-weight:700;color:rgba(255,255,255,.8)}
+  .dots{display:flex;justify-content:center;gap:8px;margin-top:10px}
+  .dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.3);cursor:pointer;transition:.25s}
+  .dots button.on{background:var(--gold-s);width:30px;border-radius:6px}
+  @media (max-width:560px){.v-arrow{width:40px;height:40px;font-size:1.2rem}.v-stage{gap:6px;padding:16px 8px}}
+
+  /* ---------- صفحة التسامح: زهري وأصفر بدل الأخضر ---------- */
+  #tolerance .title h2::after,.verses .title h2::after,#tolerance .card::before{background:linear-gradient(90deg,#ff6f91,#ffc145)}
+  #tolerance .title .tag{color:#e0457b}
+  #tolerance .card .ic{background:#ffe3ec}
+  #tolerance .card:nth-child(even) .ic{background:#fff1c2}
+  #tolerance .card:hover{border-color:#ffc9d8}
+  #tolerance .front{border-color:#ffd6e2;background:linear-gradient(160deg,#fff,#fff5f8)}
+  #tolerance .flip:nth-child(even) .front{border-color:#ffe6a3;background:linear-gradient(160deg,#fff,#fffaeb)}
+  #tolerance .front b{color:#d6336c}
+  #tolerance .front small{color:#e09b00}
+  #tolerance .back{background:linear-gradient(150deg,#ff8fab,#e84a7f)}
+  #tolerance .flip:nth-child(even) .back{background:linear-gradient(150deg,#ffd76a,#ffb020);color:#5a3a00}
+
+  .verses{background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.7),transparent 40%),linear-gradient(135deg,#ffd9e4,#ffe9ef 45%,#fff2c9);color:var(--ink)}
+  .verses .title h2{color:var(--ink)}
+  .verses .title .tag{color:#e0457b}
+  .verses .v-stage{background:#fff;border:1px solid #ffd3df;box-shadow:0 14px 34px rgba(232,74,127,.14)}
+  .verses .src{color:#c27c00;font-weight:700}
+  .verses .v-kind{background:#ffe3ec;color:#d6336c;border-color:#ffc2d4}
+  .verses .v-arrow{border:0;background:linear-gradient(150deg,#ff8fab,#e84a7f);color:#fff;box-shadow:0 6px 14px rgba(232,74,127,.3)}
+  .verses .v-arrow:hover{background:linear-gradient(150deg,#ffd76a,#ffb020);color:#5a3a00}
+  .verses .v-count{color:#b3446e}
+  .verses .dots button{background:#f7b6c9}
+  .verses .dots button.on{background:#ffb020}
+
+  /* ---------- quiz ---------- */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:26px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px;max-width:max-content;margin-inline:auto;box-shadow:var(--shadow)}
+  .tab{background:transparent;border:0;padding:10px 18px;border-radius:12px;cursor:pointer;font-family:inherit;font-weight:700;font-size:.98rem;color:var(--muted);transition:.2s}
+  .tab:hover{color:var(--pri);background:var(--pri-l)}
+  .tab.on{background:var(--pri);color:#fff}
+  .quiz{max-width:780px;margin:auto;background:#fff;border-radius:22px;padding:34px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .q-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-weight:500;margin-bottom:10px;font-size:.95rem}
+  .bar{height:8px;background:#edf1ef;border-radius:8px;overflow:hidden;margin-bottom:24px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--gold));width:0;transition:.4s}
+  .q-text{font-size:1.3rem;font-weight:700;margin-bottom:18px;color:var(--ink)}
+  .opts{display:grid;gap:10px}
+  .opt{text-align:right;background:#fff;border:1.5px solid var(--line);padding:13px 18px;border-radius:14px;cursor:pointer;font-family:inherit;font-size:1.04rem;color:var(--ink);transition:.15s}
+  .opt:hover:not(:disabled){border-color:var(--pri);background:var(--pri-l)}
+  .opt.ok{background:var(--ok-l);border-color:var(--ok);color:var(--ok);font-weight:700}
+  .opt.no{background:var(--bad-l);border-color:var(--bad);color:var(--bad)}
+  .opt.pick{background:var(--pri-l);border-color:var(--pri);color:var(--pri-d);font-weight:700}
+  .opt:disabled{cursor:default}
+  .fb{margin-top:14px;padding:12px 16px;border-radius:12px;display:none;border-right:4px solid}
+  .fb.show{display:block}
+  .fb.ok{background:var(--ok-l);color:var(--ok)} .fb.no{background:var(--bad-l);color:var(--bad)}
+  .q-foot{display:flex;justify-content:space-between;margin-top:22px;gap:10px}
+  .result{text-align:center}
+  .result .big{font-size:3.6rem}
+  .result h3{font-size:1.55rem;margin:6px 0;color:var(--ink)}
+  .score{font-size:2.5rem;font-weight:800;color:var(--pri)}
+  .result p{color:var(--muted);max-width:540px;margin:10px auto 20px}
+  .tips{text-align:right;background:var(--gold-l);border-right:4px solid var(--gold);border-radius:12px;padding:16px 20px;margin:0 auto 20px;max-width:580px}
+  .tips b{color:var(--gold-d)}
+  .tips li{margin-right:18px}
+
+  /* ---------- forms ---------- */
+  .wall-form{display:flex;gap:10px;max-width:720px;margin:0 auto 26px;flex-wrap:wrap}
+  .wall-form input,.sel{flex:1;min-width:150px;padding:12px 16px;border-radius:12px;border:1.5px solid var(--line);font-family:inherit;font-size:1rem;background:#fff;color:var(--ink);transition:.2s}
+  .sel{flex:0 1 auto;cursor:pointer}
+  .wall-form input:focus,.sel:focus{outline:none;border-color:var(--pri);box-shadow:0 0 0 4px rgba(15,107,99,.12)}
+
+  /* ---------- wall ---------- */
+  .notes{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+  .note{padding:20px 20px 16px;border-radius:16px;box-shadow:var(--shadow);position:relative;animation:pop .35s;border:1px solid rgba(0,0,0,.04);font-size:1.02rem}
+  .note::before{content:"❝";position:absolute;top:4px;left:12px;font-size:2rem;color:var(--gold);opacity:.35;font-family:serif}
+  .note small{display:block;color:var(--muted);margin-top:8px;font-size:.85rem;font-weight:700}
+  .note button{position:absolute;top:8px;right:10px;background:none;border:0;cursor:pointer;opacity:.35;font-size:.9rem}
+  .note button:hover{opacity:1}
+  @keyframes pop{from{transform:scale(.85);opacity:0}}
+
+  /* ---------- sound button ---------- */
+  .snd{position:fixed;left:16px;bottom:96px;z-index:150;width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;
+    background:linear-gradient(135deg,#14b8a6,#0f9488);color:#fff;font-size:1.4rem;box-shadow:0 8px 20px rgba(15,148,136,.35);transition:.2s}
+  .snd:hover{transform:scale(1.08)}
+  .snd.off{background:#fff;color:var(--ink);border:2px solid #ffc2d1;animation:sndPulse 1.8s ease-in-out infinite}
+  @keyframes sndPulse{50%{box-shadow:0 0 0 10px rgba(255,111,145,.18)}}
+  @media print{.snd{display:none}}
+
+  /* ---------- love tree ---------- */
+  .view-tg{display:flex;justify-content:center;gap:6px;margin:0 auto 18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:5px;width:max-content;box-shadow:var(--shadow)}
+  .view-tg button{border:0;background:transparent;font-family:inherit;font-weight:700;font-size:.95rem;color:var(--muted);padding:8px 18px;border-radius:10px;cursor:pointer}
+  .view-tg button.on{background:var(--pri);color:#fff}
+  .tree{position:relative;width:min(1180px,calc(100% + 40px));margin-inline:calc((100% - min(1180px, calc(100% + 40px))) / 2);aspect-ratio:1000/860;
+    border-radius:28px;overflow:hidden;box-shadow:0 20px 50px rgba(30,90,60,.14);border:1px solid #f0e4ea}
+  .petals{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .petals i{position:absolute;top:-4%;width:13px;height:10px;border-radius:70% 0 70% 0;background:#ffb3c7;opacity:0;animation:petal 11s linear infinite}
+  .petals i:nth-child(3n){background:#ffe08a}
+  .petals i:nth-child(4n){background:#ffd0dc;width:10px;height:8px}
+  .petals i:nth-child(1){left:12%;animation-delay:0s}  .petals i:nth-child(2){left:24%;animation-delay:3.2s}
+  .petals i:nth-child(3){left:36%;animation-delay:6.1s}.petals i:nth-child(4){left:47%;animation-delay:1.7s}
+  .petals i:nth-child(5){left:58%;animation-delay:8.4s}.petals i:nth-child(6){left:69%;animation-delay:4.6s}
+  .petals i:nth-child(7){left:80%;animation-delay:2.4s}.petals i:nth-child(8){left:90%;animation-delay:7.3s}
+  .petals i:nth-child(9){left:30%;animation-delay:9.6s}.petals i:nth-child(10){left:75%;animation-delay:5.5s}
+  @keyframes petal{0%{top:-4%;opacity:0;transform:translateX(0) rotate(0)}10%{opacity:.9}
+    50%{transform:translateX(-40px) rotate(180deg)}90%{opacity:.8}100%{top:88%;opacity:0;transform:translateX(20px) rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.petals{display:none}}
+  @media (max-width:640px){.tree{width:calc(100% + 30px);margin-inline:-15px;border-radius:20px}}
+
+  /* الأوراق: الهدف 100 */
+  .wall-st{text-align:center;color:var(--muted);font-weight:700;margin-bottom:12px}
+  .goal{max-width:620px;margin:0 auto 22px;background:#fff;border:1px solid #ffd6e2;border-radius:18px;padding:14px 18px;box-shadow:0 10px 26px rgba(232,74,127,.1)}
+  .goal-top{display:flex;justify-content:space-between;align-items:center;font-size:1.1rem;margin-bottom:8px}
+  .goal-top b{color:#c62828}
+  .goal-top span{font-weight:800;color:#e0457b}
+  .goal-bar{height:14px;border-radius:99px;background:#ffe9ef;overflow:hidden}
+  .goal-bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#ff6f91,#e53935);transition:width 1s ease}
+  .tree .slot{fill:rgba(255,255,255,.28);stroke:rgba(255,255,255,.85);stroke-width:2;stroke-dasharray:4 4}
+  .tree .apple{animation:appleIn .5s backwards;transform-box:fill-box;transform-origin:50% 0}
+  .tree .apple.new{animation:appleNew 1.2s ease}
+  @keyframes appleIn{from{opacity:0;transform:scale(.3)}}
+  @keyframes appleNew{0%{transform:scale(0)}40%{transform:scale(1.6)}60%{transform:scale(.9)}80%{transform:scale(1.2)}100%{transform:scale(1)}}
+
+  /* أيقونات الفئات الثلاث */
+  .who-q{text-align:center;font-weight:700;color:var(--muted);margin:-6px 0 12px}
+  .who{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:720px;margin:0 auto 18px}
+  .who button{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 8px;border-radius:20px;cursor:pointer;
+    font-family:inherit;font-weight:800;font-size:1rem;color:var(--ink);background:#fff;border:2px solid var(--line);box-shadow:var(--shadow);transition:.2s}
+  .who button span{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;font-size:2rem;background:var(--wb)}
+  .who button:hover{transform:translateY(-3px)}
+  .who button.on{border-color:var(--wc);background:var(--wb);box-shadow:0 10px 24px rgba(0,0,0,.1)}
+  .who button.on span{background:#fff;box-shadow:0 0 0 4px var(--wc)}
+  .who [data-w=staff]{--wc:#e0a100;--wb:#fff3c4} .who [data-w=parents]{--wc:#8e63e0;--wb:#efe6ff} .who [data-w=students]{--wc:#e84a7f;--wb:#ffe3ec}
+  @media (max-width:560px){.who{gap:8px}.who button{font-size:.8rem;padding:12px 4px}.who button span{width:50px;height:50px;font-size:1.6rem}}
+  .legend{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 16px;margin-top:10px;font-size:.88rem;font-weight:700;color:var(--muted)}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:70% 0;margin-inline-end:5px;vertical-align:-1px}
+  .wall-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 auto 18px}
+  .wall-tabs button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 16px;font-family:inherit;font-weight:700;cursor:pointer;color:var(--ink)}
+  .wall-tabs button.on{background:#e84a7f;border-color:#e84a7f;color:#fff}
+  .note .tagw{display:table;font-size:.75rem;font-weight:800;padding:1px 10px;border-radius:999px;background:rgba(255,255,255,.75);margin-bottom:6px}
+
+  /* حائط المحبة */
+  .brick{position:relative;border-radius:26px;padding:34px 26px;box-shadow:inset 0 0 0 6px rgba(255,255,255,.35),0 20px 46px rgba(150,60,40,.18);
+    background-color:#f3c9b5;
+    background-image:
+      linear-gradient(335deg,rgba(255,255,255,.12) 23px,transparent 23px),
+      linear-gradient(155deg,rgba(150,70,50,.08) 23px,transparent 23px),
+      linear-gradient(0deg,transparent 46%,#fbe6dc 46%,#fbe6dc 54%,transparent 54%),
+      linear-gradient(90deg,transparent 47%,#fbe6dc 47%,#fbe6dc 53%,transparent 53%);
+    background-size:58px 58px,58px 58px,116px 58px,116px 116px;background-position:0 0,0 0,0 0,0 0}
+  .brick .notes{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:22px}
+  .brick .note{transform:rotate(var(--r,0deg));padding-top:26px;box-shadow:0 10px 18px rgba(80,30,20,.18)}
+  .brick .note::after{content:"";position:absolute;top:-7px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,#ff9aa8,#d6336c);box-shadow:0 2px 4px rgba(0,0,0,.3)}
+  .brick .note:hover{transform:rotate(0) scale(1.03);z-index:2}
+  @media (max-width:640px){.brick{padding:24px 14px;margin-inline:-8px}}
+  .tree[hidden],.notes[hidden]{display:none}
+  .tree-svg{position:absolute;inset:0;width:100%;height:100%}
+  .leaves{position:absolute;inset:0}
+  .leaf{position:absolute;transform:translate(-50%,-50%) rotate(var(--rot));display:flex;align-items:center;justify-content:center;
+    border:0;cursor:pointer;font-family:inherit;color:var(--ink);font-weight:700;line-height:1.45;padding:8px 12px;text-align:center;
+    border-radius:65% 8% 65% 8%;box-shadow:0 6px 14px rgba(20,80,50,.18);animation:leafIn .5s backwards,leafSway 4s ease-in-out infinite;transition:box-shadow .2s,z-index 0s}
+  .leaf span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .leaf:hover,.leaf:focus-visible{z-index:5;box-shadow:0 10px 22px rgba(20,80,50,.3);outline:none;animation-play-state:paused}
+  .leaf.tiny{box-shadow:none;padding:0;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
+  .leaf.new{box-shadow:0 0 0 4px #ffd166,0 10px 24px rgba(255,170,0,.45);z-index:6}
+  @keyframes leafIn{from{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(var(--rot))}}
+  @keyframes leafSway{50%{transform:translate(-50%,-50%) rotate(calc(var(--rot) * -1)) translateY(-3px)}}
+  .leaf-pop{position:fixed;inset:0;z-index:300;background:rgba(10,40,40,.35);backdrop-filter:blur(3px);display:grid;place-items:center;padding:20px}
+  .leaf-pop[hidden]{display:none}
+  .leaf-card{position:relative;background:linear-gradient(160deg,#fff,#f1fbf4);border-radius:65% 12% 65% 12% / 30% 12% 30% 12%;padding:40px 36px 30px;max-width:440px;width:100%;
+    text-align:center;box-shadow:0 30px 60px rgba(0,0,0,.25);border:2px solid #b8e6c4;animation:pop .3s}
+  .leaf-card p{font-size:1.3rem;font-weight:700;color:var(--ink);line-height:1.8;margin:8px 0 12px}
+  .leaf-card small{color:var(--gold-d);font-weight:700}
+  .leaf-ic{font-size:2.4rem}
+  .leaf-x{position:absolute;top:12px;left:14px;border:0;background:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;box-shadow:var(--shadow);font-size:1rem}
+  /* ---------- certificate ---------- */
+  .cert-box{max-width:720px;margin:auto;text-align:center}
+  .cert{margin-top:24px;background:#fffdf8;border:2px solid var(--gold);outline:6px double var(--gold-s);outline-offset:-14px;border-radius:12px;padding:52px 40px;display:none;box-shadow:var(--shadow-h)}
+  .cert.show{display:block;animation:pop .4s}
+  .cert h3{font-size:1.8rem;color:var(--pri-d)}
+  .cert .nm{font-size:2.3rem;font-weight:700;color:var(--gold-d);margin:12px 0;font-family:'Amiri',serif}
+  .signs{display:flex;justify-content:space-around;margin-top:28px;gap:20px;flex-wrap:wrap}
+  .signs div{min-width:180px}
+  .signs small{color:var(--muted);display:block}
+  .signs b{display:block;border-top:1px solid var(--gold-s);padding-top:6px;margin-top:4px;color:var(--pri-d)}
+
+  /* ---------- hands illustration ---------- */
+  .hands{display:block;width:min(640px,95%);margin:30px auto 0}
+  .hands .girl{animation:sway 3.2s ease-in-out infinite;transform-origin:center bottom;transform-box:fill-box}
+  .hands .girl:nth-of-type(even){animation-delay:1.6s}
+  @keyframes sway{50%{transform:translateY(-4px)}}
+  .hands .hrt{animation:beat 1.6s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+  @keyframes beat{50%{transform:scale(1.25)}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--pattern),#0a2f30;color:#cfe0dd;text-align:center;padding:36px 20px 110px}
+  footer p:first-child{color:var(--gold-s);font-weight:700}
+
+  /* ---------- pages + bottom icon dock ---------- */
+  [data-page]{display:none}
+  [data-page].show{display:block;animation:pgIn .35s ease}
+  @keyframes pgIn{from{opacity:0;transform:translateY(12px)}}
+  .dock{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;justify-content:space-around;gap:4px;
+    background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+    border-radius:22px 22px 0 0;padding:8px 10px;box-shadow:0 -8px 28px rgba(16,42,48,.10)}
+  .dock a{flex:1;max-width:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 8px;
+    border-radius:14px;font-size:.78rem;font-weight:700;color:var(--muted);transition:.2s;white-space:nowrap;position:relative}
+  .dock a span{font-size:1.45rem;line-height:1.25;transition:transform .2s}
+  .dock a:hover{color:var(--pri)}
+  .dock a:hover span{transform:translateY(-3px)}
+  .dock a.on{background:var(--pri);color:#fff;box-shadow:0 6px 16px rgba(15,107,99,.28)}
+  .dock a.on::after{content:"";position:absolute;top:-9px;width:26px;height:3px;border-radius:3px;background:var(--gold)}
+
+  @media (max-width:820px){ .quiz{padding:22px} header.hero{border-radius:0 0 28px 28px} }
+
+  /* ================= هوية بصرية لافتة: زهري فوشي + بنفسجي + كهرماني (بلا إيموجي) ================= */
+  :root{
+    --pri:#d6246e; --pri-d:#a3134f; --pri-l:#fde7f0; --pri-m:#ec4f8f;
+    --gold:#f59e0b; --gold-d:#c27803; --gold-l:#fff5dc; --gold-s:#ffc94d;
+    --vio:#7b5cff; --teal:#00b3a4; --line:#f1e3ea; --bg:#fcf9fb;
+    --grad:linear-gradient(135deg,#ff3d7f,#d6246e 45%,#7b5cff);
+    --shadow:0 1px 2px rgba(120,20,70,.05),0 12px 30px rgba(120,20,70,.08);
+    --shadow-h:0 4px 8px rgba(120,20,70,.06),0 22px 44px rgba(120,20,70,.16);
+  }
+  body{background:var(--bg)}
+  /* الشريط الأخضر بجانب الشعار يبقى أخضر */
+  .staff{background:linear-gradient(90deg,#0a4b46,#0f6b63 50%,#0a4b46)}
+  .staff .school b{color:#ffd166}
+  .topband::after{background:linear-gradient(90deg,#ff3d7f,#ffb020 50%,#7b5cff)}
+
+  /* الأزرار */
+  .btn{border-radius:14px;font-weight:800;padding:12px 28px}
+  .btn-rose,.hero .btn-rose{background:var(--grad);color:#fff;box-shadow:0 10px 24px rgba(214,36,110,.32)}
+  .btn-rose:hover,.hero .btn-rose:hover{background:var(--grad);filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 14px 30px rgba(214,36,110,.4)}
+  .btn-ghost{border-color:#f6c7da;color:var(--pri-d)}
+  .btn-ghost:hover{border-color:var(--pri);color:var(--pri);background:#fff5f9}
+
+  /* الصفحة الأولى */
+  .hero .eyebrow{color:#c2185b;box-shadow:0 6px 18px rgba(214,36,110,.14)}
+  .hero .eyebrow::before,.hero .eyebrow::after{content:"";width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#ff3d7f,#ffb020)}
+  .hero h1 .a{background-image:linear-gradient(90deg,#d6246e,#7b5cff)}
+  .hero h1 .a,.hero h1 .b{-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero h1 .b{background-image:linear-gradient(90deg,#ff7a45,#ffb020)}
+
+  /* العناوين */
+  .title .tag,#tolerance .title .tag,.verses .title .tag{color:var(--pri)}
+  .title h2::after,#tolerance .title h2::after,.verses .title h2::after{width:72px;height:5px;background:linear-gradient(90deg,#ff3d7f,#ffb020,#7b5cff)}
+
+  /* البطاقات: رقم كبير متدرّج بدل الأيقونة + شريط علوي ملوّن */
+  .card{border:0;border-radius:22px;padding:28px 26px 24px}
+  .card::before,#tolerance .card::before{opacity:1;height:6px;background:var(--cg)}
+  .card .num{font-size:2.6rem;font-weight:800;line-height:1;margin-bottom:12px;background:var(--cg);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px}
+  .card h3{font-size:1.25rem;font-weight:800}
+  .grid .card:nth-child(4n+1){--cg:linear-gradient(90deg,#ff3d7f,#ff8a5c)}
+  .grid .card:nth-child(4n+2){--cg:linear-gradient(90deg,#ffb020,#ff7a45)}
+  .grid .card:nth-child(4n+3){--cg:linear-gradient(90deg,#7b5cff,#c35cff)}
+  .grid .card:nth-child(4n+4){--cg:linear-gradient(90deg,#00b3a4,#3dd6c4)}
+  .card:hover{box-shadow:var(--shadow-h)}
+
+  /* خلفيات الأقسام */
+  #tolerance{background:linear-gradient(180deg,#fff4f8,var(--bg) 60%)}
+  #friendship{background:linear-gradient(180deg,#f4f0ff,var(--bg) 60%)}
+  #wall{background:linear-gradient(180deg,#fff7ec,var(--bg) 50%)}
+  #lovewall{background:linear-gradient(180deg,#fff1f1,var(--bg) 50%)}
+
+  /* أيقونات الفئات الثلاث: بطاقات نصية ملوّنة بلا رسومات */
+  .who button{padding:22px 10px;font-size:1.12rem;border:2px solid var(--wc);color:var(--wc);background:#fff;border-radius:18px}
+  .who button.on{background:var(--wg);color:#fff;border-color:transparent;box-shadow:0 12px 26px var(--ws);transform:translateY(-2px)}
+  .who [data-w=staff]{--wc:#d98a00;--wg:linear-gradient(135deg,#ffb020,#ff7a45);--ws:rgba(255,140,40,.35)}
+  .who [data-w=parents]{--wc:#6a47e8;--wg:linear-gradient(135deg,#7b5cff,#c35cff);--ws:rgba(123,92,255,.35)}
+  .who [data-w=students]{--wc:#d6246e;--wg:linear-gradient(135deg,#ff3d7f,#d6246e);--ws:rgba(214,36,110,.35)}
+  @media (max-width:560px){.who button{font-size:.9rem;padding:16px 4px}}
+
+  /* الحائط */
+  .wall-tabs button.on{background:var(--grad);border-color:transparent}
+  .note::before{color:var(--pri)}
+  .goal-top b{color:var(--pri-d)}
+  .goal-bar i{background:linear-gradient(90deg,#ff3d7f,#ffb020,#7b5cff)}
+
+  /* زر الصوت: نص بدل الرمز */
+  .snd{width:auto;height:auto;padding:10px 18px;border-radius:999px;font-family:inherit;font-size:.85rem;font-weight:800;background:var(--grad);box-shadow:0 8px 20px rgba(214,36,110,.35)}
+  .snd.off{background:#fff;color:var(--pri-d);border:2px solid #f6c7da}
+
+  /* الشريط السفلي: كلمات فقط */
+  .dock{padding:10px 12px;gap:6px}
+  .dock a{font-size:.98rem;font-weight:800;padding:14px 8px;color:#7a5a6a}
+  .dock a:hover{color:var(--pri);background:#fff3f8}
+  .dock a.on{background:var(--grad);color:#fff;box-shadow:0 8px 20px rgba(214,36,110,.35)}
+  .dock a.on::after{background:#ffb020}
+  @media (max-width:560px){.dock{padding:8px 4px;gap:3px}.dock a{font-size:.72rem;padding:13px 2px;white-space:normal;text-align:center;line-height:1.3}}
+  footer{padding-bottom:120px}
+
+  /* التذييل */
+  footer{background:radial-gradient(circle at 20% 0,rgba(255,61,127,.35),transparent 50%),linear-gradient(135deg,#2e0b40,#6a1250 60%,#9c1450);color:#fbe3ee}
+  footer p:first-child{color:#ffc94d}
+
+  /* ================= ألوان فاتحة + زخارف هندسية باهتة ================= */
+  :root{
+    --geo-pink:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23d6246e' stroke-opacity='.07' stroke-width='1.2'%3E%3Crect x='28' y='28' width='40' height='40'/%3E%3Crect x='28' y='28' width='40' height='40' transform='rotate(45 48 48)'/%3E%3Ccircle cx='48' cy='48' r='11'/%3E%3Cpath d='M0 0L20 20M96 0L76 20M0 96L20 76M96 96L76 76M48 0V8M48 96V88M0 48H8M96 48H88'/%3E%3C/g%3E%3C/svg%3E");
+    --geo-vio:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%237b5cff' stroke-opacity='.07' stroke-width='1.2'%3E%3Cpath d='M48 14L78 31V65L48 82L18 65V31Z'/%3E%3Cpath d='M48 30L64 39V57L48 66L32 57V39Z'/%3E%3Cpath d='M48 0V14M48 82V96M0 24L18 31M96 24L78 31M0 72L18 65M96 72L78 65'/%3E%3C/g%3E%3C/svg%3E");
+    --geo-gold:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23e09b00' stroke-opacity='.09' stroke-width='1.2'%3E%3Cpath d='M48 18L56 40L78 48L56 56L48 78L40 56L18 48L40 40Z'/%3E%3Ccircle cx='48' cy='48' r='30'/%3E%3Ccircle cx='0' cy='0' r='18'/%3E%3Ccircle cx='96' cy='0' r='18'/%3E%3Ccircle cx='0' cy='96' r='18'/%3E%3Ccircle cx='96' cy='96' r='18'/%3E%3C/g%3E%3C/svg%3E");
+    --soft:linear-gradient(135deg,#ffe1ec,#efe6ff 55%,#fff1d2);
+    --bg:#fffafc;
+  }
+  body{background:var(--geo-pink),var(--bg)}
+  header.hero{background:var(--geo-pink),
+      radial-gradient(circle at 12% 18%,rgba(255,170,200,.35) 0,transparent 40%),
+      radial-gradient(circle at 88% 22%,rgba(200,180,255,.35) 0,transparent 42%),
+      radial-gradient(circle at 50% 105%,rgba(255,220,150,.40) 0,transparent 50%),
+      linear-gradient(160deg,#fff5f9,#fffdf7 50%,#f8f4ff)}
+  #tolerance{background:var(--geo-pink),linear-gradient(180deg,#fff3f8,#fffafc 70%)}
+  #friendship{background:var(--geo-vio),linear-gradient(180deg,#f6f2ff,#fffafc 70%)}
+  #wall{background:var(--geo-gold),linear-gradient(180deg,#fff8ec,#fffafc 60%)}
+  #lovewall{background:var(--geo-pink),linear-gradient(180deg,#fff4f4,#fffafc 60%)}
+  .verses{background:var(--geo-gold),linear-gradient(135deg,#fff0f5,#fff8ee 50%,#f7f2ff)}
+
+  /* أزرار وعناصر فاتحة بنص ملوّن */
+  .btn-rose,.hero .btn-rose{background:var(--soft);color:#a3134f;border:1.5px solid #f6c3d7;box-shadow:0 8px 20px rgba(214,36,110,.12)}
+  .btn-rose:hover,.hero .btn-rose:hover{background:var(--soft);color:#7a0e3c;filter:none;box-shadow:0 12px 26px rgba(214,36,110,.2)}
+  .dock{background:var(--geo-pink),rgba(255,255,255,.97)}
+  .dock a.on{background:var(--soft);color:#a3134f;box-shadow:0 6px 16px rgba(214,36,110,.15);border:1.5px solid #f6c3d7}
+  .wall-tabs button.on{background:var(--soft);color:#a3134f;border-color:#f6c3d7}
+  .snd{background:var(--soft);color:#a3134f;border:1.5px solid #f6c3d7;box-shadow:0 6px 16px rgba(214,36,110,.15)}
+  .snd.off{background:#fff}
+  .who button.on{color:var(--wc);border-color:var(--wc);box-shadow:0 10px 22px var(--ws)}
+  .who [data-w=staff]{--wg:linear-gradient(135deg,#fff3d1,#ffe2c4)}
+  .who [data-w=parents]{--wg:linear-gradient(135deg,#efe9ff,#f3e2ff)}
+  .who [data-w=students]{--wg:linear-gradient(135deg,#ffe4ee,#ffd6e5)}
+  .who [data-w]{--ws:rgba(150,80,120,.14)}
+  .goal-bar i{background:linear-gradient(90deg,#ff9ebd,#ffd27a,#b9a5ff)}
+  .verses .v-arrow{background:var(--soft);color:#a3134f;border:1.5px solid #f6c3d7;box-shadow:none}
+  .verses .v-arrow:hover{background:#fff;color:#a3134f}
+  .card::before,#tolerance .card::before{opacity:.75}
+
+  /* تذييل فاتح */
+  footer{background:var(--geo-vio),linear-gradient(135deg,#fff1f6,#f4efff 60%,#fff6e3);color:#5d4352;border-top:1px solid #f3dbe6}
+  footer p:first-child{color:#c2185b}
+
+  /* الشريط الأخضر أعلى الصفحة: مضغوط بجانب الشعار وليس بعرض الصفحة */
+  .topband .wrap{justify-content:flex-start;gap:16px}
+  .staff{flex:1;max-width:none;flex-wrap:nowrap;padding:6px 14px;font-size:.88rem;line-height:1.5;border-radius:999px;white-space:nowrap}
+  .staff span,.staff span + span{flex-basis:auto !important;padding:0 14px;border-inline-start:1px solid rgba(255,255,255,.35) !important}
+  .staff span:first-child{border:0 !important}
+  .staff i{font-style:normal}
+  .staff .sh{display:none}
+  @media (max-width:980px){ .staff{font-size:.78rem;padding:6px 8px} .staff span,.staff span + span{padding:0 8px} .staff .lg{display:none} .staff .sh{display:inline} }
+  @media (max-width:640px){
+    .topband .wrap{flex-wrap:wrap;justify-content:center;gap:8px}
+    .staff{flex:1 1 100%;font-size:.66rem;padding:5px 6px}
+    .staff span,.staff span + span{padding:0 6px}
+  }
+  @media (max-width:560px){
+    .dock{padding:6px 2px}
+    .dock a{padding:6px 2px;font-size:.66rem}
+    .dock a span{font-size:1.25rem}
+    .ministry img{height:60px}
+    .tabs{max-width:none}
+  }
+  @media print{
+    body *{visibility:hidden}
+    .cert,.cert *{visibility:visible}
+    .cert{position:absolute;inset:0;margin:auto;box-shadow:none}
+    .dock{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <div class="wrap">
+    <div class="ministry">
+      <img src="data:image/jpeg;base64,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" alt="شعار وزارة التعليم">
+    </div>
+    <div class="staff">
+      <span class="school"><b>متوسطة بهوان</b></span>
+      <span><i class="lg">إعداد منفذة الوعي الفكري:</i><i class="sh">المنفذة:</i> <b>أ. عائشة الشهري</b></span>
+      <span><i class="lg">مديرة المدرسة:</i><i class="sh">المديرة:</i> <b>أ. حمساء الأحمري</b></span>
+    </div>
+  </div>
+</div>
+
+<!-- الصوت الخلفي: يعمل عند فتح الموقع ويُعاد تلقائيًا كلما انتهى -->
+<audio id="bgAudio" loop preload="auto"></audio>
+
+<nav class="dock" aria-label="التنقل بين الصفحات">
+  <a href="#home">الرئيسية</a>
+  <a href="#tolerance">التسامح</a>
+  <a href="#friendship">الصداقة</a>
+  <a href="#wall">شجرة المحبة</a>
+  <a href="#lovewall">حائط المحبة</a>
+</nav>
+
+<header class="hero" id="home" data-page="home">
+  <div class="wrap">
+    <div class="eyebrow">برنامج الوعي الفكري</div>
+    <h1><span class="a">بالتسامح نرتقي</span><br><span class="b">وبالصداقة نسمو</span></h1>
+    <p>رحلة ممتعة لكِ يا صديقتي، تتعرّفين فيها على قيمة التسامح وجمال الصداقة، لتكوني متسامحة وصديقة وفيّة</p>
+    <a href="#tolerance" class="btn btn-rose">ابدئي الرحلة</a>
+
+    <!-- طالبات يمسكن بأيدي بعضهن -->
+    <svg class="hands" viewBox="0 0 640 190" role="img" aria-label="طالبات يمسكن بأيدي بعضهن">
+      <defs>
+        <g id="girl">
+          <!-- dress -->
+          <path d="M-20 70 Q0 62 20 70 L36 160 Q0 170 -36 160 Z" fill="currentColor"/>
+          <!-- hijab -->
+          <path d="M-27 46 Q-27 14 0 14 Q27 14 27 46 Q27 70 0 74 Q-27 70 -27 46 Z" fill="currentColor" opacity=".85"/>
+          <!-- face -->
+          <ellipse cx="0" cy="45" rx="14" ry="16" fill="#f6d3b8"/>
+          <circle cx="-5" cy="44" r="1.8" fill="#3b2f3f"/><circle cx="5" cy="44" r="1.8" fill="#3b2f3f"/>
+          <path d="M-5 51 Q0 55 5 51" stroke="#c0566f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <circle cx="-9" cy="50" r="2.6" fill="#f2a7b6" opacity=".7"/><circle cx="9" cy="50" r="2.6" fill="#f2a7b6" opacity=".7"/>
+          <!-- feet -->
+          <rect x="-16" y="160" width="10" height="16" rx="4" fill="#3b2f3f"/><rect x="6" y="160" width="10" height="16" rx="4" fill="#3b2f3f"/>
+        </g>
+      </defs>
+      <!-- linked arms (between neighbours) -->
+      <g stroke="#f6d3b8" stroke-width="9" fill="none" stroke-linecap="round">
+        <path d="M88 88 Q128 132 168 88"/>
+        <path d="M208 88 Q248 132 288 88"/>
+        <path d="M328 88 Q368 132 408 88"/>
+        <path d="M448 88 Q488 132 528 88"/>
+        <!-- outer arms waving -->
+        <path d="M48 88 Q28 70 24 44"/>
+        <path d="M568 88 Q588 70 592 44"/>
+      </g>
+      <!-- clasped hands -->
+      <g fill="#efc3a4">
+        <circle cx="128" cy="110" r="9"/><circle cx="248" cy="110" r="9"/>
+        <circle cx="368" cy="110" r="9"/><circle cx="488" cy="110" r="9"/>
+        <circle cx="24" cy="40" r="8"/><circle cx="592" cy="40" r="8"/>
+      </g>
+      <!-- girls -->
+      <use href="#girl" class="girl" x="68" y="0" style="color:#ff8fab"/>
+      <use href="#girl" class="girl" x="188" y="0" style="color:#2ec4b6"/>
+      <use href="#girl" class="girl" x="308" y="0" style="color:#ffc145"/>
+      <use href="#girl" class="girl" x="428" y="0" style="color:#6c9dff"/>
+      <use href="#girl" class="girl" x="548" y="0" style="color:#b388ff"/>
+      <!-- hearts above joined hands -->
+      <g fill="#ff6f91">
+        <path class="hrt" d="M128 80 c-6-8-16-2-10 6 l10 9 l10-9 c6-8-4-14-10-6z"/>
+        <path class="hrt" d="M248 80 c-6-8-16-2-10 6 l10 9 l10-9 c6-8-4-14-10-6z" style="animation-delay:.4s"/>
+        <path class="hrt" d="M368 80 c-6-8-16-2-10 6 l10 9 l10-9 c6-8-4-14-10-6z" style="animation-delay:.8s"/>
+        <path class="hrt" d="M488 80 c-6-8-16-2-10 6 l10 9 l10-9 c6-8-4-14-10-6z" style="animation-delay:1.2s"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<section id="tolerance" data-page="tolerance">
+  <div class="wrap">
+    <div class="title">
+      <span class="tag">القيمة الأولى</span>
+      <h2>ما هو التسامح؟</h2>
+      <p>التسامح هو العفو عن الإساءة، وتقبّل اختلاف الآخرين، والتعامل معهم بلطف واحترام.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="num">01</div><h3>العفو عند المقدرة</h3><p>أن أسامح من أخطأ في حقي حتى لو كنت قادرة على الرد.</p></div>
+      <div class="card"><div class="num">02</div><h3>تقبّل الاختلاف</h3><p>أحترم زميلتي مهما اختلفت عني في الرأي أو الشكل أو الطباع.</p></div>
+      <div class="card"><div class="num">03</div><h3>كظم الغيظ</h3><p>أهدأ عند الغضب ولا أتلفّظ بكلمة أندم عليها.</p></div>
+      <div class="card"><div class="num">04</div><h3>صفاء القلب</h3><p>لا أحمل الحقد، فالقلب الصافي يعيش سعيدًا مطمئنًا.</p></div>
+    </div>
+
+    <div class="title" style="margin-top:60px">
+      <h2>ثمرات التسامح</h2>
+      <p>اضغطي على البطاقة لتكتشفي ثمرتها</p>
+    </div>
+    <div class="grid">
+      <div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="face front"><b>على نفسي</b><small>اضغطي هنا</small></div><div class="face back">راحة البال، وسعادة القلب، ونيل محبة الله ورضاه.</div></div></div>
+      <div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="face front"><b>على صديقاتي</b><small>اضغطي هنا</small></div><div class="face back">تقوى المودة، وتزول الخلافات، وتدوم الصداقة.</div></div></div>
+      <div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="face front"><b>على مدرستي</b><small>اضغطي هنا</small></div><div class="face back">بيئة آمنة يسودها الاحترام والتعاون بين الجميع.</div></div></div>
+      <div class="flip" onclick="this.classList.toggle('on')"><div class="flip-in"><div class="face front"><b>على مجتمعي</b><small>اضغطي هنا</small></div><div class="face back">مجتمع متماسك متحاب يرتقي ويزدهر.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="verses" data-page="tolerance">
+  <div class="wrap">
+    <div class="title">
+      <span class="tag">من نور الوحي</span>
+      <h2>آيات وأحاديث</h2>
+    </div>
+    <div class="slider" id="vSlider">
+      <div class="v-stage">
+        <button class="v-arrow" id="vPrev" aria-label="السابق" title="السابق">→</button>
+        <div class="v-body" id="vBody">
+          <div class="v-kind" id="vKind"></div>
+          <div class="verse" id="vText"></div>
+          <div class="src" id="vSrc"></div>
+        </div>
+        <button class="v-arrow" id="vNext" aria-label="التالي" title="التالي">←</button>
+      </div>
+      <div class="v-count" id="vCount"></div>
+      <div class="dots" id="vDots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="friendship" data-page="friendship">
+  <div class="wrap">
+    <div class="title">
+      <span class="tag">القيمة الثانية</span>
+      <h2>الصداقة الحقيقية</h2>
+      <p>الصديقة الحقيقية كنزٌ ثمين، تفرح لفرحكِ، وتعينكِ على الخير، وتنصحكِ بلطف.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="num">01</div><h3>الوفاء</h3><p>تحفظ سرّكِ، وتبقى بجانبكِ في السراء والضراء.</p></div>
+      <div class="card"><div class="num">02</div><h3>الصدق</h3><p>تقول لكِ الحقيقة بأسلوب لطيف، ولا تجاملكِ على خطأ.</p></div>
+      <div class="card"><div class="num">03</div><h3>الإيثار</h3><p>تحب لكِ الخير كما تحبه لنفسها، وتشارككِ ما لديها.</p></div>
+      <div class="card"><div class="num">04</div><h3>القدوة الحسنة</h3><p>تشجعكِ على الاجتهاد والطاعة وتبعدكِ عن السوء.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" data-page="quiz">
+  <div class="wrap">
+    <div class="title">
+      <span class="tag">اختبري نفسكِ</span>
+      <h2>الاختبارات الذاتية</h2>
+      <p>اختاري الاختبار الذي تريدينه، وأجيبي بصدق مع نفسكِ</p>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="quiz" id="quizBox"></div>
+  </div>
+</section>
+
+<section id="wall" data-page="wall">
+  <div class="wrap">
+    <div class="title">
+      <span class="tag">شاركينا</span>
+      <h2>شجرة المحبة</h2>
+      <p>هدفنا <b>100 ورقة</b>! كل عبارة لطيفة تكتبينها تُنبت ورقة على شجرتنا، وتُعلَّق عبارتكِ على <b>حائط المحبة</b></p>
+    </div>
+    <p class="who-q">من أنتِ / أنتَ؟ اختر/اختاري أيقونتك ثم اكتب/اكتبي عبارتك</p>
+    <div class="who" id="who">
+      <button type="button" data-w="staff">منسوبو المدرسة</button>
+      <button type="button" data-w="parents">أولياء الأمور</button>
+      <button type="button" data-w="students" class="on">الطالبات</button>
+    </div>
+    <form class="wall-form" id="wallForm">
+      <input id="wMsg" maxlength="120" placeholder="اكتبي عبارتكِ هنا..." required>
+      <input id="wName" maxlength="25" placeholder="الاسم (اختياري)" style="max-width:180px">
+      <button class="btn btn-rose" type="submit">ازرعي ورقتكِ</button>
+    </form>
+    <p id="wallSt" class="wall-st"></p>
+
+    <!-- عدّاد الهدف -->
+    <div class="goal">
+      <div class="goal-top"><b id="goalTxt">0 من 100 ورقة</b><span id="goalPct">0%</span></div>
+      <div class="goal-bar"><i id="goalBar"></i></div>
+      <div class="legend" id="legend"></div>
+    </div>
+
+    <!-- شجرة المحبة: 100 ورقة هدف، كل عبارة تُنبت ورقة -->
+    <div class="tree" id="treeView">
+      <svg class="tree-svg" viewBox="0 0 1000 860" aria-hidden="true">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0f5"/><stop offset=".55" stop-color="#fdf7ec"/><stop offset="1" stop-color="#eefaf0"/></linearGradient>
+          <linearGradient id="trk" x1="0" x2="1"><stop offset="0" stop-color="#5e3620"/><stop offset=".35" stop-color="#8f5a36"/><stop offset=".6" stop-color="#a26a42"/><stop offset="1" stop-color="#5a331d"/></linearGradient>
+          <radialGradient id="cD" cx=".38" cy=".3" r=".75"><stop offset="0" stop-color="#5fbf7a"/><stop offset="1" stop-color="#2c7a4b"/></radialGradient>
+          <radialGradient id="cM" cx=".35" cy=".28" r=".75"><stop offset="0" stop-color="#9be3a1"/><stop offset="1" stop-color="#4caa68"/></radialGradient>
+          <radialGradient id="cL" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#d4f7c4"/><stop offset="1" stop-color="#8fd98f" stop-opacity=".2"/></radialGradient>
+          <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff3c4"/><stop offset="1" stop-color="#fff3c4" stop-opacity="0"/></radialGradient>
+          <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8efbf"/><stop offset="1" stop-color="#a9e2a6"/></linearGradient>
+          <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fdc97"/><stop offset="1" stop-color="#78c47e"/></linearGradient>
+          <linearGradient id="board" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8ea"/><stop offset="1" stop-color="#f6e2bd"/></linearGradient>
+          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1f5f3a" flood-opacity=".22"/></filter>
+        </defs>
+        <!-- السماء والأرض -->
+        <rect width="1000" height="860" fill="url(#sky)"/>
+        <circle cx="880" cy="110" r="150" fill="url(#sun)"/>
+        <g fill="#fff" opacity=".9">
+          <path d="M60 120a26 26 0 0 1 48-12 22 22 0 0 1 40 14 18 18 0 0 1-4 34H72a20 20 0 0 1-12-36z"/>
+          <path d="M840 60a22 22 0 0 1 40-10 18 18 0 0 1 34 12 15 15 0 0 1-3 29h-61a17 17 0 0 1-10-31z"/>
+        </g>
+        <path d="M0 720 C160 660 330 690 500 700 C680 712 840 655 1000 690 V860 H0Z" fill="url(#hill1)"/>
+        <path d="M0 775 C190 740 340 765 500 760 C670 755 820 735 1000 765 V860 H0Z" fill="url(#hill2)"/>
+        <ellipse cx="500" cy="782" rx="190" ry="20" fill="#5a9e5c" opacity=".35"/>
+        <!-- أزهار العشب -->
+        <g id="grassFlowers"></g>
+        <!-- الشجرة -->
+        <g filter="url(#soft)">
+          <g id="cnBack"></g>
+          <g id="limbs" fill="url(#trk)"></g>
+          <g id="cnFront"></g>
+        </g>
+        <g id="apples"></g>
+        <!-- اللوحة الخشبية -->
+        <g transform="translate(500 700)">
+          <path d="M-60 -38 L-40 -60 M60 -38 L40 -60" stroke="#6b4226" stroke-width="3" stroke-linecap="round"/>
+          <rect x="-125" y="-38" width="250" height="64" rx="16" fill="url(#board)" stroke="#b8893a" stroke-width="3"/>
+          <rect x="-115" y="-29" width="230" height="46" rx="11" fill="none" stroke="#e6c58a" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <circle cx="-104" cy="-6" r="4" fill="#b8893a"/><circle cx="104" cy="-6" r="4" fill="#b8893a"/>
+          <text x="0" y="5" text-anchor="middle" font-family="Tajawal, sans-serif" font-weight="800" font-size="30" fill="#c2185b">شجرة المحبة</text>
+        </g>
+      </svg>
+      <div class="petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div style="text-align:center;margin-top:26px">
+      <a href="#lovewall" class="btn btn-rose">شاهدي حائط المحبة</a>
+    </div>
+  </div>
+</section>
+
+<section id="lovewall" data-page="lovewall">
+  <div class="wrap">
+    <div class="title">
+      <span class="tag">عباراتكم</span>
+      <h2>حائط المحبة</h2>
+      <p>هنا تُعلَّق كل العبارات الجميلة من طالبات متوسطة بهوان ومنسوبي المدرسة وأولياء الأمور</p>
+    </div>
+    <p id="wallCount" class="wall-st"></p>
+    <div class="wall-tabs" id="wallTabs"></div>
+    <div class="brick">
+      <div class="notes" id="notes"></div>
+    </div>
+    <div style="text-align:center;margin-top:26px">
+      <a href="#wall" class="btn btn-ghost">أضيفي عبارتكِ وازرعي ورقتكِ</a>
+    </div>
+  </div>
+</section>
+
+<section id="cert" data-page="cert">
+  <div class="wrap cert-box">
+    <div class="title">
+      <span class="tag">ختام الرحلة</span>
+      <h2>شهادة سفيرة التسامح</h2>
+      <p>اكتبي اسمكِ واحصلي على شهادتكِ (يمكنكِ طباعتها)</p>
+    </div>
+    <div class="wall-form" style="justify-content:center">
+      <input id="cName" maxlength="40" placeholder="اسمكِ الكامل">
+      <button class="btn btn-mint" onclick="makeCert()">أصدري الشهادة</button>
+    </div>
+    <div class="cert" id="certCard">
+      <h3>شهادة سفيرة التسامح والصداقة</h3>
+      <p>تمنح متوسطة بهوان هذه الشهادة للطالبة المتميزة</p>
+      <div class="nm" id="certName"></div>
+      <p>تقديرًا لإتمامها رحلة <b>«بالتسامح نرتقي وبالصداقة نسمو»</b><br>متمنين لها دوام التميز والتقدم</p>
+      <div class="signs">
+        <div><small>منفذة الوعي الفكري</small><b>أ. عائشة الشهري</b></div>
+        <div><small>مديرة المدرسة</small><b>أ. حمساء الأحمري</b></div>
+      </div>
+      <button class="btn btn-rose" style="margin-top:16px" onclick="window.print()">طباعة</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>بالتسامح نرتقي وبالصداقة نسمو</p>
+  <p style="font-weight:700">متوسطة بهوان</p>
+  <small>قلوبٌ متسامحة.. صداقاتٌ تدوم</small>
+  <p style="margin-top:10px;font-size:.92rem;opacity:.85">إعداد منفذة الوعي الفكري: أ. عائشة الشهري &nbsp;|&nbsp; مديرة المدرسة: أ. حمساء الأحمري</p>
+</footer>
+
+<script>
+/* ---------- Backend (Google Sheet عبر Google Apps Script) ----------
+   الموقع منشور على GitHub، ويحفظ العبارات والنتائج في جدول المعلمة عبر رابط Apps Script.
+   ضعي هنا رابط تطبيق الويب من Apps Script (ينتهي بـ /exec) — راجعي دليل التشغيل.
+   إذا بقي فارغًا يعمل الموقع في «وضع التجربة» ويحفظ على الجهاز فقط. */
+const SCRIPT_URL = '';
+const IN_GAS = typeof google !== 'undefined' && google.script && google.script.run;
+const ONLINE = !!(IN_GAS || SCRIPT_URL);
+function api(fn, ...args){
+  if (IN_GAS) return new Promise((res, rej) => google.script.run.withSuccessHandler(res).withFailureHandler(rej)[fn](...args));
+  if (!SCRIPT_URL) return Promise.reject(new Error('offline'));
+  // text/plain يتجنب طلب CORS المسبق، وApps Script يرد بـ JSON
+  return fetch(SCRIPT_URL, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify({fn, args})})
+    .then(r => r.json())
+    .then(j => { if (!j.ok) throw new Error(j.error || 'خطأ في الخادم'); return j.data; });
+}
+function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ---------- Background sound ----------
+   بعد النشر عبر Google: ارفعي ملف الصوت إلى Google Drive وضعي رقمه هنا (راجعي دليل التشغيل). */
+const DRIVE_AUDIO_ID = '';
+const bgAudio = document.getElementById('bgAudio');
+bgAudio.src = DRIVE_AUDIO_ID ? `https://drive.google.com/uc?export=download&id=${DRIVE_AUDIO_ID}` : 'background.mp4';
+bgAudio.volume = .6;
+try { localStorage.removeItem('tsSoundOff'); } catch (e) {}
+// الصوت يعمل دائمًا (لا يوجد زر إيقاف)
+function playSound(){ if (bgAudio.paused) bgAudio.play().catch(() => {}); }
+bgAudio.addEventListener('ended', () => { bgAudio.currentTime = 0; playSound(); });   // احتياط لإعادة التشغيل
+bgAudio.addEventListener('pause', () => setTimeout(playSound, 300));                // لو توقف لأي سبب يعود
+// الأنشودة تنتهي عند 76.5 ثانية، وبعدها موسيقى ختامية: نقطع قبلها بتلاشٍ لطيف ونعيد من البداية
+const SONG_END = 76.5, FADE = 0.6, VOL = 0.6;
+setInterval(() => {
+  if (bgAudio.paused) return;
+  const t = bgAudio.currentTime;
+  if (t >= SONG_END){ bgAudio.currentTime = 0; bgAudio.volume = 0; return; }
+  const fadeOut = (SONG_END - t) / FADE, fadeIn = t / FADE;
+  bgAudio.volume = VOL * Math.max(0, Math.min(1, fadeOut, fadeIn));
+}, 40);
+// المتصفحات تمنع الصوت قبل أول لمسة؛ فيبدأ مع أول ضغطة أو لمسة في أي مكان
+['pointerdown', 'keydown', 'touchstart', 'click'].forEach(ev => addEventListener(ev, playSound, {passive: true}));
+document.addEventListener('visibilitychange', () => { if (!document.hidden) playSound(); });
+playSound();
+
+/* ---------- Page router (bottom icons) ---------- */
+function go(){
+  const id = (location.hash || '#home').slice(1);
+  const page = document.querySelector(`[data-page="${id}"]`) ? id : 'home';
+  document.querySelectorAll('[data-page]').forEach(el => el.classList.toggle('show', el.dataset.page === page));
+  document.querySelectorAll('.dock a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + page));
+  requestAnimationFrame(() => window.scrollTo(0, 0));
+}
+addEventListener('hashchange', go);
+go();
+
+/* ---------- Verses slider ---------- */
+const verses = [
+  ["﴿وَلْيَعْفُوا وَلْيَصْفَحُوا ۗ أَلَا تُحِبُّونَ أَن يَغْفِرَ اللَّهُ لَكُمْ﴾","سورة النور - الآية 22"],
+  ["﴿وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ ۗ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ﴾","سورة آل عمران - الآية 134"],
+  ["﴿خُذِ الْعَفْوَ وَأْمُرْ بِالْعُرْفِ وَأَعْرِضْ عَنِ الْجَاهِلِينَ﴾","سورة الأعراف - الآية 199"],
+  ["«لا يؤمنُ أحدُكم حتى يُحبَّ لأخيه ما يُحبُّ لنفسِه»","حديث شريف - متفق عليه"],
+  ["«المرءُ على دينِ خليلِه، فلينظرْ أحدُكم مَن يُخالِل»","حديث شريف - رواه أبو داود والترمذي"]
+];
+let vi = 0, vTimer = null;
+const vDots = document.getElementById('vDots'), vBody = document.getElementById('vBody');
+verses.forEach((_, i) => {
+  const b = document.createElement('button');
+  b.onclick = () => { showV(i); restartV(); };
+  b.setAttribute('aria-label', 'الشاهد ' + (i + 1));
+  vDots.appendChild(b);
+});
+function showV(i){
+  vi = (i + verses.length) % verses.length;
+  const [txt, src] = verses[vi];
+  vBody.classList.remove('in'); void vBody.offsetWidth; vBody.classList.add('in');
+  document.getElementById('vKind').textContent = txt.startsWith('﴿') ? 'آية قرآنية' : 'حديث شريف';
+  document.getElementById('vText').textContent = txt;
+  document.getElementById('vSrc').textContent = src;
+  document.getElementById('vCount').textContent = (vi + 1) + ' من ' + verses.length;
+  [...vDots.children].forEach((d, j) => d.classList.toggle('on', j === vi));
+}
+function restartV(){ clearInterval(vTimer); vTimer = setInterval(() => showV(vi + 1), 8000); }
+document.getElementById('vNext').onclick = () => { showV(vi + 1); restartV(); };
+document.getElementById('vPrev').onclick = () => { showV(vi - 1); restartV(); };
+// سحب بالإصبع على الجوال
+let tx = null;
+const vSlider = document.getElementById('vSlider');
+vSlider.addEventListener('touchstart', e => tx = e.touches[0].clientX, {passive:true});
+vSlider.addEventListener('touchend', e => {
+  if (tx === null) return;
+  const dx = e.changedTouches[0].clientX - tx; tx = null;
+  if (Math.abs(dx) > 40){ showV(dx > 0 ? vi + 1 : vi - 1); restartV(); } // RTL: السحب لليمين = التالي
+});
+// إيقاف مؤقت عند مرور الفأرة
+vSlider.addEventListener('mouseenter', () => clearInterval(vTimer));
+vSlider.addEventListener('mouseleave', restartV);
+showV(0); restartV();
+
+/* ---------- Quizzes ---------- */
+// type "knowledge": one correct answer (a = index). type "scale": self-assessment, points per option.
+const quizzes = [
+  {
+    id:'k', name:'معلوماتي عن التسامح', type:'knowledge',
+    qs:[
+      {q:'التسامح يعني:', o:['الانتقام ممن أساء إليّ','العفو عن الإساءة وتقبّل الآخرين','تجاهل الجميع','الخوف من المواجهة'], a:1, e:'أحسنتِ! التسامح عفوٌ عن قوة، وتقبّلٌ للآخرين باحترام.'},
+      {q:'قال تعالى: ﴿وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ﴾، معنى «كظم الغيظ»:', o:['إظهار الغضب أمام الجميع','حبس الغضب وعدم إنفاذه','نسيان الأمر تمامًا','الابتعاد عن الناس'], a:1, e:'كظم الغيظ هو حبسه والسيطرة عليه وعدم الرد بالإساءة.'},
+      {q:'من ثمرات التسامح على المجتمع:', o:['انتشار الخلافات','التفكك والعزلة','الترابط والمحبة','كثرة الشكاوى'], a:2, e:'التسامح يجعل المجتمع مترابطًا متحابًا.'},
+      {q:'الصديقة الحقيقية هي التي:', o:['تجاملني على أخطائي','تنصحني بلطف وتعينني على الخير','تبتعد عني وقت الحاجة','تنشر أسراري'], a:1, e:'الصديقة الصادقة مرآة لصديقتها، تنصحها وتعينها.'},
+      {q:'«المرء على دين خليله» يدل على:', o:['أهمية اختيار الصديقة الصالحة','كثرة الأصدقاء','عدم الحاجة للأصدقاء','أن الأصدقاء لا يؤثرون'], a:0, e:'الصديقة تؤثر في صديقتها، فلنختر الصالحات.'},
+      {q:'اختلفت معكِ زميلتكِ في الرأي، التصرف الأفضل:', o:['أقاطعها','أسخر من رأيها','أحترم رأيها وأناقشها بهدوء','أشكوها للجميع'], a:2, e:'الاختلاف لا يفسد للودّ قضية، والحوار الهادئ أجمل.'},
+      {q:'أيّ مما يلي ليس من صفات الصديقة الوفية؟', o:['حفظ السر','الغيبة','الإيثار','الصدق'], a:1, e:'الغيبة خُلق مذموم يهدم الصداقة.'},
+      {q:'التسامح دليل على:', o:['الضعف','قوة الشخصية ونقاء القلب','قلة الحيلة','الخوف'], a:1, e:'المتسامحة قوية، تملك نفسها عند الغضب.'}
+    ]
+  },
+  {
+    id:'s', name:'هل أنا متسامحة؟', type:'scale',
+    hint:'مقياس ذاتي: لا توجد إجابة خاطئة، اختاري ما يشبهكِ فعلًا.',
+    opts:['دائمًا','أحيانًا','نادرًا'], pts:[2,1,0],
+    qs:[
+      'عندما تخطئ في حقي صديقتي واعتذرت، أقبل اعتذارها بسرعة.',
+      'أستطيع التحكم في غضبي ولا أرفع صوتي.',
+      'أحترم زميلاتي المختلفات عني في الرأي أو الطباع.',
+      'أنسى الإساءة ولا أذكّر بها صاحبتها كلما اختلفنا.',
+      'أبادر بالاعتذار عندما أخطئ.',
+      'ألتمس العذر لغيري قبل أن أحكم عليه.',
+      'أتمنى الخير حتى لمن أساءت إليّ.',
+      'أبتعد عن السخرية من الآخرين.'
+    ],
+    levels:[
+      {min:13, icon:'', t:'قلبكِ أبيض كالحمامة!', d:'أنتِ متسامحة بدرجة رائعة، تنشرين المحبة أينما كنتِ. استمري فأنتِ قدوة لزميلاتكِ.', tips:['شاركي تجربتكِ في التسامح مع صديقاتكِ','كوني سفيرة للصلح بين المتخاصمات']},
+      {min:8, icon:'', t:'متسامحة في طريق التميز', d:'لديكِ قلب طيب ومتسامح في كثير من المواقف، وتحتاجين قليلًا من التدريب لتصلي للأفضل.', tips:['عدّي إلى العشرة قبل الرد عند الغضب','تذكّري أن العفو يرفع قدركِ عند الله','ابدئي بالاعتذار ولو كان الخطأ صغيرًا']},
+      {min:0, icon:'', t:'بذرة تسامح تنتظر أن تنمو', d:'لا بأس! كل واحدة منا تستطيع أن تتعلم التسامح خطوة بخطوة، وأول خطوة أنكِ أجبتِ بصدق.', tips:['تدرّبي على قول: «لا بأس، سامحتكِ»','التمسي لغيركِ سبعين عذرًا','اكتبي كل يوم موقفًا سامحتِ فيه أحدًا']}
+    ]
+  },
+  {
+    id:'f', name:'أيّ صديقة أنا؟', type:'scale',
+    hint:'اكتشفي كم أنتِ صديقة وفيّة، وأجيبي بصدق.',
+    opts:['دائمًا','أحيانًا','نادرًا'], pts:[2,1,0],
+    qs:[
+      'أحفظ أسرار صديقتي ولا أخبر بها أحدًا.',
+      'أفرح لنجاح صديقتي وتفوقها من قلبي.',
+      'أقف بجانب صديقتي عندما تكون حزينة.',
+      'أنصح صديقتي بلطف إذا أخطأت.',
+      'أدافع عن صديقتي إذا تكلم عنها أحد في غيابها.',
+      'أشارك صديقتي أدواتي ووقتي بسعادة.',
+      'أشجع صديقتي على المذاكرة والأخلاق الحسنة.',
+      'أتقبّل نصيحة صديقتي دون أن أغضب.'
+    ],
+    levels:[
+      {min:13, icon:'', t:'صديقة من ذهب!', d:'أنتِ كنز لكل من يصادقكِ، وفيّة وصادقة ومحبة للخير. صديقاتكِ محظوظات بكِ.', tips:['حافظي على صداقاتكِ بالتواصل الدائم','عرّفي صديقاتكِ بقيمة الصداقة الحقيقية']},
+      {min:8, icon:'', t:'صديقة رائعة', d:'تملكين صفات الصديقة الجميلة، وببعض الاهتمام ستكونين صديقة مثالية.', tips:['اسألي عن صديقتكِ إذا غابت','عبّري عن محبتكِ بكلمة طيبة أو هدية بسيطة','استمعي لصديقتكِ باهتمام']},
+      {min:0, icon:'', t:'صداقة تنمو', d:'الصداقة مهارة نتعلمها! ابدئي بخطوات صغيرة وستجدين صداقاتكِ تزدهر.', tips:['ابتسمي وابدئي بالسلام','احفظي السر فهو أمانة','افرحي لفرح غيركِ']}
+    ]
+  },
+  {
+    id:'m', name:'مواقف وقرارات', type:'knowledge',
+    qs:[
+      {q:'سكبت زميلتكِ العصير على دفتركِ بالخطأ واعتذرت، ماذا تفعلين؟', o:['أصرخ عليها أمام الجميع','أقبل اعتذارها وأطمئنها','أسكب العصير على دفترها','لا أكلمها أبدًا'], a:1, e:'رائع! الخطأ غير مقصود، وقبول الاعتذار خُلق النبلاء.'},
+      {q:'طالبة جديدة في الفصل تجلس وحيدة، ماذا تفعلين؟', o:['أتجاهلها','أدعوها للجلوس معنا وأرحب بها','أنتظر أن تتحدث هي أولًا','أتكلم عنها مع صديقاتي'], a:1, e:'الترحيب بالجديدة يصنع صداقة جميلة ويُدخل السرور على قلبها.'},
+      {q:'سمعتِ صديقاتكِ يسخرن من زميلة لاختلاف لهجتها:', o:['أضحك معهن','أنصحهن بلطف أن السخرية لا تليق بنا','أنشر الكلام','أسكت وأمشي'], a:1, e:'أحسنتِ! النصيحة بلطف تحمي الجميع من الأذى.'},
+      {q:'تشاجرتِ مع صديقتكِ المقربة ومرّ يومان:', o:['أنتظرها تعتذر مهما طال الوقت','أبادر بالسلام والحديث معها','أصادق غيرها لأغيظها','أخبر الجميع بما حدث'], a:1, e:'«وخيرهما الذي يبدأ بالسلام» — المبادرة دليل قلب كبير.'},
+      {q:'صديقتكِ حصلت على درجة أعلى منكِ:', o:['أشعر بالغيرة وأبتعد عنها','أهنئها وأطلب منها أن نذاكر معًا','أقول إنها محظوظة فقط','أقلل من إنجازها'], a:1, e:'الفرح لنجاح الصديقة علامة على قلب نقي.'},
+      {q:'أخبرتكِ صديقتكِ بسرّ وطلبت ألا تخبري أحدًا:', o:['أخبر صديقة واحدة فقط','أحفظه فهو أمانة','أكتبه في مجموعة الصف','أستخدمه إذا غضبت منها'], a:1, e:'حفظ السر من أعظم صفات الصديقة الوفية.'}
+    ]
+  }
+];
+
+let cur = null, idx = 0, score = 0, answers = [];
+const best = JSON.parse(localStorage.getItem('tsBest') || '{}');
+const tabs = document.getElementById('tabs'), box = document.getElementById('quizBox');
+
+quizzes.forEach(qz => {
+  const b = document.createElement('button');
+  b.className = 'tab'; b.textContent = qz.name; b.dataset.id = qz.id;
+  b.onclick = () => start(qz.id);
+  tabs.appendChild(b);
+});
+
+let student = JSON.parse(localStorage.getItem('tsStudent') || 'null');
+
+function intro(){
+  [...tabs.children].forEach(t => t.classList.remove('on'));
+  if (!student){
+    box.innerHTML = `<div class="result"><div class="big"></div><h3>عرّفينا بنفسكِ قبل البدء</h3>
+      <p>اكتبي اسمكِ وصفّكِ لتصل نتائجكِ إلى معلمتكِ.</p>
+      <form class="wall-form" id="stuForm" style="justify-content:center">
+        <input id="stuName" maxlength="40" placeholder="اسمكِ الثلاثي" required>
+        <select id="stuCls" required class="sel">
+          <option value="" disabled selected>الصف</option>
+          <option>أول متوسط</option><option>ثاني متوسط</option><option>ثالث متوسط</option>
+        </select>
+        <select id="stuSec" required class="sel">
+          <option value="" disabled selected>الفصل</option>
+          ${Array.from({length: 10}, (_, i) => `<option>${i + 1}</option>`).join('')}
+        </select>
+        <button class="btn btn-rose" type="submit">ابدئي</button>
+      </form></div>`;
+    box.querySelector('#stuForm').onsubmit = e => {
+      e.preventDefault();
+      student = {name: stuName.value.trim(), cls: stuCls.value && stuSec.value ? `${stuCls.value} - فصل ${stuSec.value}` : ''};
+      if (!student.name || !student.cls) return;
+      localStorage.setItem('tsStudent', JSON.stringify(student));
+      if (!cName.value) cName.value = student.name;
+      intro();
+    };
+    return;
+  }
+  box.innerHTML = `<div class="result"><div class="big"></div>
+  <h3>أهلًا يا ${esc(student.name)}</h3>
+  <p style="margin-bottom:4px">${esc(student.cls)} — <a href="javascript:void 0" id="chgStu" style="color:var(--rose-d);font-weight:700">لستِ ${esc(student.name)}؟ غيّري الاسم</a></p>
+  <p>اختاري اختبارًا من الأعلى. لدينا اختبارات معرفية تقيس معلوماتكِ، ومقاييس ذاتية تساعدكِ على اكتشاف نفسكِ.
+  ${ONLINE ? 'نتيجتكِ تصل إلى معلمتكِ بعد كل اختبار.' : '<br><small>(وضع التجربة: النتائج تُحفظ على هذا الجهاز فقط)</small>'}</p>
+  ${Object.keys(best).length ? '<div class="tips"><b>أفضل نتائجكِ:</b><ul>' + quizzes.filter(q => best[q.id] != null).map(q => `<li>${q.name}: ${best[q.id]}%</li>`).join('') + '</ul></div>' : ''}
+  </div>`;
+  box.querySelector('#chgStu').onclick = () => {
+    student = null; localStorage.removeItem('tsStudent');
+    for (const k in best) delete best[k]; localStorage.removeItem('tsBest');
+    intro();
+  };
+}
+
+function start(id){
+  if (!student){ intro(); box.querySelector('#stuName').focus(); return; }
+  cur = quizzes.find(q => q.id === id); idx = 0; score = 0; answers = [];
+  [...tabs.children].forEach(t => t.classList.toggle('on', t.dataset.id === id));
+  render();
+}
+
+function render(){
+  const n = cur.qs.length, item = cur.qs[idx];
+  const isK = cur.type === 'knowledge';
+  const qText = isK ? item.q : item;
+  const opts = isK ? item.o : cur.opts;
+  box.innerHTML = `
+    ${cur.hint && idx === 0 ? `<div class="tips" style="max-width:none">${cur.hint}</div>` : ''}
+    <div class="q-head"><span>السؤال ${idx + 1} من ${n}</span><span>${cur.name}</span></div>
+    <div class="bar"><i style="width:${(idx / n) * 100}%"></i></div>
+    <div class="q-text">${qText}</div>
+    <div class="opts">${opts.map((o, i) => `<button class="opt" data-i="${i}">${['أ','ب','ج','د'][i]}) ${o}</button>`).join('')}</div>
+    <div class="fb" id="fb"></div>
+    <div class="q-foot">
+      <button class="btn btn-ghost" id="prev" ${idx === 0 || isK ? 'style="visibility:hidden"' : ''}>→ السابق</button>
+      <button class="btn btn-rose" id="next" style="visibility:hidden">${idx === n - 1 ? 'عرض النتيجة' : 'التالي ←'}</button>
+    </div>`;
+  const barEl = box.querySelector('.bar i');
+  requestAnimationFrame(() => barEl.style.width = ((idx + 1) / n) * 100 + '%');
+
+  const btns = box.querySelectorAll('.opt'), next = box.querySelector('#next');
+  if (!isK && answers[idx] != null){ btns[answers[idx]].classList.add('pick'); next.style.visibility = 'visible'; }
+
+  btns.forEach(b => b.onclick = () => {
+    const i = +b.dataset.i;
+    if (isK){
+      btns.forEach(x => x.disabled = true);
+      const fb = box.querySelector('#fb');
+      if (i === item.a){ score++; b.classList.add('ok'); fb.className = 'fb show ok'; fb.textContent = item.e; }
+      else { b.classList.add('no'); btns[item.a].classList.add('ok'); fb.className = 'fb show no'; fb.textContent = 'الإجابة الصحيحة: ' + item.o[item.a] + ' — ' + item.e.replace(/^(أحسنتِ|رائع)!\s*/, ''); }
+    } else {
+      btns.forEach(x => x.classList.remove('pick')); b.classList.add('pick'); answers[idx] = i;
+    }
+    next.style.visibility = 'visible';
+  });
+  next.onclick = () => { if (idx < n - 1){ idx++; render(); } else result(); };
+  box.querySelector('#prev').onclick = () => { if (idx > 0){ idx--; render(); } };
+}
+
+function result(){
+  let pct, html, scoreTxt, levelTxt;
+  if (cur.type === 'knowledge'){
+    const n = cur.qs.length; pct = Math.round(score / n * 100);
+    scoreTxt = `${score} من ${n}`;
+    const [ic, t, d] = pct >= 85 ? ['','ممتازة! أنتِ نجمة','معلوماتكِ رائعة عن التسامح والصداقة، فلتكوني قدوة لغيركِ.']
+      : pct >= 60 ? ['','أحسنتِ!','أداء جميل، راجعي الأقسام في الأعلى لتصلي إلى الدرجة الكاملة.']
+      : ['','محاولة جميلة','لا بأس، اقرئي محتوى الموقع مرة أخرى ثم أعيدي المحاولة، ستنجحين بإذن الله.'];
+    levelTxt = t;
+    html = `<div class="big">${ic}</div><h3>${t}</h3><div class="score">${score} من ${n}</div><p>${d}</p>`;
+  } else {
+    const total = answers.reduce((s, a) => s + cur.pts[a], 0), max = cur.qs.length * 2;
+    pct = Math.round(total / max * 100);
+    scoreTxt = `${total} من ${max}`;
+    const lv = cur.levels.find(l => total >= l.min);
+    levelTxt = lv.t;
+    html = `<div class="big">${lv.icon}</div><h3>${lv.t}</h3><div class="score">${pct}%</div><p>${lv.d}</p>
+      <div class="tips"><b>نصائح لكِ</b><ul>${lv.tips.map(t => `<li>${t}</li>`).join('')}</ul></div>`;
+  }
+  if (best[cur.id] == null || pct > best[cur.id]){ best[cur.id] = pct; localStorage.setItem('tsBest', JSON.stringify(best)); }
+  box.innerHTML = `<div class="result">${html}
+    <p id="sendSt" style="font-weight:700;margin:-6px auto 16px"></p>
+    <button class="btn btn-rose" onclick="start('${cur.id}')">أعيدي الاختبار</button>
+    <button class="btn btn-ghost" onclick="nextQuiz()">اختبار آخر</button></div>`;
+  if (pct >= 60) confetti();
+
+  const st = box.querySelector('#sendSt');
+  const rec = {name: student.name, cls: student.cls, quiz: cur.name.replace(/^\S+\s/, ''), score: scoreTxt, pct, level: levelTxt};
+  if (!ONLINE){ st.textContent = '(وضع التجربة: لم تُرسل النتيجة)'; st.style.color = 'var(--muted)'; return; }
+  st.textContent = '⏳ جارٍ إرسال نتيجتكِ للمعلمة...'; st.style.color = 'var(--muted)';
+  const send = (tries) => api('saveResult', rec)
+    .then(() => { st.textContent = 'وصلت نتيجتكِ إلى معلمتكِ'; st.style.color = 'var(--mint-d)'; })
+    .catch(() => tries > 0 ? setTimeout(() => send(tries - 1), 2000)
+      : (st.innerHTML = 'تعذّر الإرسال، تأكدي من الإنترنت ثم <a href="javascript:void 0" style="text-decoration:underline">أعيدي المحاولة</a>',
+         st.style.color = '#a2404d', st.querySelector('a').onclick = () => send(2)));
+  send(2);
+}
+function nextQuiz(){
+  const i = quizzes.indexOf(cur);
+  start(quizzes[(i + 1) % quizzes.length].id);
+}
+intro();
+
+/* ---------- Confetti ---------- */
+function confetti(){
+  const cols = ['#ff3d7f','#ffb020','#7b5cff','#12b5a6','#ff7a45'];
+  for (let i = 0; i < 40; i++){
+    const s = document.createElement('span');
+    s.style.cssText = `position:fixed;top:-30px;left:${Math.random()*100}vw;width:${8+Math.random()*8}px;height:${5+Math.random()*6}px;border-radius:2px;background:${cols[i % cols.length]};z-index:999;pointer-events:none;transition:transform ${2+Math.random()*2}s ease-in,opacity 3s`;
+    document.body.appendChild(s);
+    requestAnimationFrame(() => { s.style.transform = `translateY(${innerHeight + 80}px) rotate(${Math.random()*720}deg)`; s.style.opacity = '0.2'; });
+    setTimeout(() => s.remove(), 4200);
+  }
+}
+
+/* ---------- Love wall ---------- */
+const colors = ['#ffffff','#e8f3f1','#f7f0e2','#eef2f8','#f6edef'];
+const defaults = [
+  {m:'سامحيني إن أخطأت يومًا، فأنتِ أغلى من كل خلاف', n:'صديقة وفية'},
+  {m:'التسامح لا يغيّر الماضي، لكنه يصنع مستقبلًا أجمل', n:''},
+  {m:'شكرًا لأنكِ دائمًا بجانبي', n:'سارة'}
+];
+// أونلاين: كل رسائل الطالبات من جدول المعلمة (بلا حد). تجربة: على الجهاز فقط.
+// الحائط يبدأ فارغًا؛ وتُزال العبارات التجريبية القديمة إن كانت محفوظة على الجهاز
+const sample = new Set(defaults.map(d => d.m));
+let notes = ONLINE ? [] : (JSON.parse(localStorage.getItem('tsWall') || '[]')).filter(x => !sample.has(x.m));
+const wallSt = document.getElementById('wallSt');
+/* ---- رسم الشجرة (مرة واحدة): تاج مورق متدرّج + جذع وأغصان ---- */
+(function buildTree(){
+  const NS = 'http://www.w3.org/2000/svg';
+  let seed = 11; const rnd = () => (seed = seed * 16807 % 2147483647) / 2147483647;
+  const C = (x, y, r, f) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${f}"/>`;
+  const cx = 500, cy = 300, A = 430, B = 262;
+  // الطبقة الخلفية الداكنة
+  let back = `<ellipse cx="500" cy="312" rx="${A-40}" ry="${B-30}" fill="url(#cD)"/>`;
+  for (let i = 0; i < 28; i++){ const t = i / 28 * 2 * Math.PI; back += C(cx + (A-52) * Math.cos(t), cy + 14 + (B-46) * Math.sin(t), 60 + rnd() * 24, 'url(#cD)'); }
+  document.getElementById('cnBack').innerHTML = back;
+  // الجذع والأغصان (أشكال مستدقّة)
+  function limb(x0, y0, qx, qy, x1, y1, w0, w1){
+    const dx = x1 - x0, dy = y1 - y0, L = Math.hypot(dx, dy), nx = -dy / L, ny = dx / L, wm = (w0 + w1) / 2;
+    const p = (x, y, w, s) => `${(x + nx * w / 2 * s).toFixed(1)} ${(y + ny * w / 2 * s).toFixed(1)}`;
+    return `<path d="M${p(x0,y0,w0,1)} Q${p(qx,qy,wm,1)} ${p(x1,y1,w1,1)} L${p(x1,y1,w1,-1)} Q${p(qx,qy,wm,-1)} ${p(x0,y0,w0,-1)}Z"/>`;
+  }
+  let lb = '';
+  lb += limb(500, 812, 498, 700, 500, 540, 132, 70);              // الجذع
+  lb += limb(470, 790, 430, 800, 380, 812, 46, 6) + limb(530, 790, 570, 800, 620, 812, 46, 6) + limb(500, 800, 486, 812, 470, 822, 30, 5); // الجذور
+  lb += limb(490, 570, 420, 470, 300, 380, 58, 20) + limb(510, 570, 580, 470, 700, 380, 58, 20);
+  lb += limb(500, 560, 506, 440, 500, 270, 50, 16);
+  lb += limb(340, 410, 250, 400, 170, 430, 22, 6) + limb(660, 410, 750, 400, 830, 430, 22, 6);
+  lb += limb(500, 400, 420, 330, 360, 230, 22, 6) + limb(500, 400, 580, 330, 640, 230, 22, 6);
+  lb += limb(330, 395, 270, 340, 240, 290, 16, 5) + limb(670, 395, 730, 340, 760, 290, 16, 5);
+  // خطوط لحاء خفيفة
+  lb += `<g stroke="#c48a5a" stroke-opacity=".45" stroke-width="3" fill="none" stroke-linecap="round"><path d="M478 790 C474 720 480 650 476 590"/><path d="M520 780 C526 720 518 660 524 600"/><path d="M500 760 C503 720 497 690 500 650"/></g>`;
+  document.getElementById('limbs').innerHTML = lb;
+  // الطبقة الأمامية: عناقيد فاتحة مع ترك فتحة سفلية تظهر منها الأغصان
+  let fr = '';
+  const skip = t => { const d = (t * 180 / Math.PI) % 360; return d > 55 && d < 125; };
+  for (let i = 0; i < 24; i++){ const t = i / 24 * 2 * Math.PI + .1; if (skip(t)) continue; fr += C(cx + (A-88) * Math.cos(t), cy - 6 + (B-82) * Math.sin(t), 56 + rnd() * 22, 'url(#cM)'); }
+  for (let i = 0; i < 14; i++){ const t = i / 14 * 2 * Math.PI + .3; if (skip(t)) continue; fr += C(cx + (A-210) * Math.cos(t), cy - 20 + (B-140) * Math.sin(t), 52 + rnd() * 16, 'url(#cM)'); }
+  fr += C(500, 230, 95, 'url(#cM)');
+  for (let i = 0; i < 16; i++){ const t = Math.PI + (i / 15) * Math.PI; fr += C(cx - 10 + (A-115) * Math.cos(t), cy - 16 + (B-105) * Math.sin(t), 30 + rnd() * 16, 'url(#cL)'); }
+  fr += C(470, 190, 50, 'url(#cL)') + C(330, 250, 36, 'url(#cL)') + C(660, 240, 36, 'url(#cL)');
+  document.getElementById('cnFront').innerHTML = fr;
+  // أزهار صغيرة على العشب
+  let gf = '';
+  [[70,770],[150,800],[240,755],[330,805],[650,800],[730,760],[820,805],[920,770],[110,835],[880,840],[420,840],[590,845]].forEach(([x, y], i) => {
+    const c = ['#ff8fab', '#ffd166', '#ffffff', '#c9a7ff'][i % 4];
+    gf += `<path d="M${x} ${y + 16} V${y + 4}" stroke="#4f9a55" stroke-width="2"/>`;
+    for (let k = 0; k < 5; k++){ const t = k / 5 * 2 * Math.PI; gf += C(x + 5 * Math.cos(t), y + 5 * Math.sin(t), 4, c); }
+    gf += C(x, y, 3, '#ffb020');
+  });
+  document.getElementById('grassFlowers').innerHTML = gf;
+})();
+
+/* ---- الهدف: 100 ورقة؛ كل عبارة تُنبت ورقة ---- */
+const GOAL = 100;
+const appleSlots = (() => {
+  const pts = [];
+  for (let i = 0; i < GOAL; i++){
+    const r = Math.sqrt((i + .5) / GOAL), th = i * 2.39996;
+    pts.push([500 + 372 * r * Math.cos(th), 296 + 212 * r * Math.sin(th)]);
+  }
+  // ترتيب الزرع متفرّق على الشجرة كلها بدل البدء من المنتصف
+  return pts.map((_, k) => pts[(k * 37) % GOAL]);
+})();
+// ورقة ملوّنة (زهري/ذهبي/مرجاني/بنفسجي) حتى تبرز فوق خضرة الشجرة
+const LEAF_COLORS = [['#ff8fab','#e84a7f'], ['#ffd166','#e0a100'], ['#ffab76','#e8703a'], ['#c9a7ff','#8e63e0'], ['#ff6f91','#c2185b']];
+const LEAF = ([c1, c2]) => `<path d="M0 22 C-4 18 -18 6 -16 -8 C-14 -18 -4 -24 0 -26 C4 -24 14 -18 16 -8 C18 6 4 18 0 22Z" fill="${c1}" stroke="${c2}" stroke-width="2"/>
+  <path d="M0 24 V-22 M0 4 L-9 -4 M0 4 L9 -4 M0 -8 L-7 -14 M0 -8 L7 -14" stroke="${c2}" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".7"/>
+  <ellipse cx="-7" cy="-9" rx="3" ry="7" fill="#fff" opacity=".35" transform="rotate(20 -7 -9)"/>`;
+let newLeaf = false;
+function drawTree(){
+  const n = notes.length, got = Math.min(n, GOAL);
+  let s = '';
+  appleSlots.forEach(([x, y], k) => {
+    if (k < got){
+      const isNew = newLeaf && k === got - 1;
+      const rot = (k * 47) % 80 - 40;
+      const g = WHO[whoOf(notes[n - 1 - k])];   // الورقة رقم k = العبارة رقم k من الأقدم
+      s += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot}) scale(.85)"><g class="apple${isNew ? ' new' : ''}" style="animation-delay:${isNew ? 0 : (k % 10) * .04}s">${LEAF(g.c)}</g></g>`;
+    } else {
+      s += `<path class="slot" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(k * 47) % 80 - 40}) scale(.75)" d="M0 22 C-4 18 -18 6 -16 -8 C-14 -18 -4 -24 0 -26 C4 -24 14 -18 16 -8 C18 6 4 18 0 22Z"/>`;
+    }
+  });
+  document.getElementById('apples').innerHTML = s;
+  goalTxt.textContent = n >= GOAL ? `اكتمل الهدف: ${GOAL} ورقة!` : `${got} من ${GOAL} ورقة`;
+  goalPct.textContent = Math.round(got / GOAL * 100) + '%';
+  goalBar.style.width = (got / GOAL * 100) + '%';
+  if (newLeaf && n === GOAL) confetti();
+  newLeaf = false;
+  const cnt = k => notes.filter(x => whoOf(x) === k).length;
+  legend.innerHTML = Object.entries(WHO).map(([k, g]) => `<span><i style="background:${g.c[0]}"></i>${g.t}: ${cnt(k)}</span>`).join('');
+}
+
+/* الفئات الثلاث: لكل فئة أيقونة ولون ورقة */
+const WHO = {
+  staff:    {ic: '', t: 'منسوبو المدرسة', one: 'من منسوبي المدرسة', c: ['#ffd166', '#e0a100'], bg: '#fff3c4'},
+  parents:  {ic: '', t: 'أولياء الأمور',  one: 'ولي أمر',          c: ['#c9a7ff', '#8e63e0'], bg: '#efe6ff'},
+  students: {ic: '', t: 'الطالبات',        one: 'طالبة',            c: ['#ff8fab', '#e84a7f'], bg: '#ffe3ec'}
+};
+const whoOf = x => (x && WHO[x.w]) ? x.w : 'students';
+let curWho = 'students', wallFilter = 'all';
+document.querySelectorAll('#who button').forEach(b => b.onclick = () => {
+  curWho = b.dataset.w;
+  document.querySelectorAll('#who button').forEach(x => x.classList.toggle('on', x === b));
+  wMsg.placeholder = curWho === 'students' ? 'اكتبي عبارتكِ هنا...' : 'اكتب/اكتبي عبارتك هنا...';
+  wMsg.focus();
+});
+
+function drawNotes(){
+  const el = document.getElementById('notes'); el.innerHTML = '';
+  wallSt.textContent = !notes.length && ONLINE ? 'الشجرة تنتظر أول ورقة، كوني أنتِ الأولى' : '';
+  wallCount.textContent = notes.length ? `عدد العبارات على الحائط: ${notes.length}` : 'لا توجد عبارات بعد، كوني أول من يكتب';
+  drawTree();
+  // أزرار تصفية الحائط حسب الفئة
+  wallTabs.innerHTML = '';
+  [['all', 'الكل', notes.length], ...Object.entries(WHO).map(([k, g]) => [k, `${g.t}`, notes.filter(x => whoOf(x) === k).length])]
+    .forEach(([k, t, c]) => {
+      const b = document.createElement('button'); b.textContent = `${t} (${c})`; b.className = wallFilter === k ? 'on' : '';
+      b.onclick = () => { wallFilter = k; drawNotes(); }; wallTabs.appendChild(b);
+    });
+  notes.forEach((x, i) => {
+    const w = whoOf(x), g = WHO[w];
+    if (wallFilter !== 'all' && wallFilter !== w) return;
+    const d = document.createElement('div'); d.className = 'note';
+    d.style.background = g.bg;
+    d.style.setProperty('--r', `${(i % 3 - 1) * 1.8}deg`);
+    const tg = document.createElement('div'); tg.className = 'tagw'; tg.textContent = `${g.t}`; d.appendChild(tg);
+    d.appendChild(document.createTextNode(x.m));
+    const s = document.createElement('small'); s.textContent = '— ' + (x.n || g.one); d.appendChild(s);
+    if (!ONLINE){ // الحذف في وضع التجربة فقط؛ أونلاين تحذف المعلمة من الجدول
+      const del = document.createElement('button'); del.textContent = '✕'; del.title = 'حذف';
+      del.onclick = () => { notes.splice(i, 1); saveLocal(); }; d.appendChild(del);
+    }
+    el.appendChild(d);
+  });
+}
+function saveLocal(){ localStorage.setItem('tsWall', JSON.stringify(notes)); drawNotes(); }
+function loadWall(){
+  if (!ONLINE) return;
+  api('getMessages').then(list => { notes = list; drawNotes(); })
+    .catch(() => { wallSt.textContent = 'تعذّر تحميل الرسائل، أعيدي فتح الصفحة'; });
+}
+document.getElementById('wallForm').onsubmit = e => {
+  e.preventDefault();
+  const m = wMsg.value.trim(); if (!m) return;
+  if (!ONLINE){ newLeaf = true; notes.unshift({m, n: wName.value.trim(), w: curWho}); wMsg.value = ''; saveLocal(); return; }
+  const btn = e.target.querySelector('button'); btn.disabled = true; btn.textContent = '⏳';
+  api('addMessage', m, wName.value.trim(), curWho)
+    .then(list => { newLeaf = true; notes = list; wMsg.value = ''; drawNotes(); confetti(); })
+    .catch(() => alert('تعذّر إرسال الرسالة، تأكدي من الإنترنت وحاولي مرة أخرى'))
+    .finally(() => { btn.disabled = false; btn.textContent = 'ازرعي ورقتكِ'; });
+};
+const onWallPage = () => location.hash === '#wall' || location.hash === '#lovewall';
+if (ONLINE){ wallSt.textContent = '⏳ جارٍ تحميل الرسائل...'; loadWall(); setInterval(() => { if (onWallPage()) loadWall(); }, 30000); }
+addEventListener('hashchange', () => { if (onWallPage()) loadWall(); });
+drawNotes();
+
+/* ---------- Certificate ---------- */
+function makeCert(){
+  const n = cName.value.trim();
+  if (!n){ cName.focus(); cName.style.borderColor = '#e07a86'; return; }
+  cName.style.borderColor = '';
+  certName.textContent = n;
+  certCard.classList.add('show');
+  confetti();
+}
+</script>
+</body>
+</html>
